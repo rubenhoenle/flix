@@ -32,7 +32,8 @@
         flix-backend = pkgs.buildGoModule {
           name = "flix-backend";
           version = "0.0.1";
-          vendorHash = "sha256-Ef2XLxGq8TO3WVh9EvLE30Is2CBwH4pqXxkq1tcuR0Q=";
+          #vendorHash = pkgs.lib.fakeHash;
+          vendorHash = "sha256-HbQmlJcBBp13YF6HgHonNdhrEfmhu9X4tYrb1JwoBBg=";
           src = ./backend;
         };
 
