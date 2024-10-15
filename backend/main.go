@@ -15,6 +15,7 @@ type exercise struct {
 func main() {
 	router := gin.Default()
 	router.GET("/exercises", getExercises)
+    router.GET("/exercise/:uuid", getExercise)
 
 	router.Run("localhost:8080")
 }
@@ -30,3 +31,15 @@ var exercises = []exercise{
 func getExercises(c *gin.Context) {
 	c.IndentedJSON(http.StatusOK, exercises)
 }
+
+func getExercise(c *gin.Context) {
+    uuid := c.Param("uuid")
+    for _, exercise := range exercises {
+        if exercise.UUID.String() == uuid {
+            c.IndentedJSON(http.StatusOK, exercise)
+            return
+        }
+    }
+    c.IndentedJSON(http.StatusNotFound, gin.H{"message": "exercise not found"})
+}
+
