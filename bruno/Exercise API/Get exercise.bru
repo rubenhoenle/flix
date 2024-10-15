@@ -1,0 +1,15 @@
+meta {
+  name: Get exercise
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{flix-host}}/exercise/{{uuid}}
+  body: none
+  auth: none
+}
+
+vars:pre-request {
+  uuid: 4b298db5-a727-41de-93e1-c12747416d04
+}

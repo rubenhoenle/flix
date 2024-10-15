@@ -1,0 +1,15 @@
+meta {
+  name: Delete exercise
+  type: http
+  seq: 2
+}
+
+delete {
+  url: {{flix-host}}/exercise/{{uuid}}
+  body: none
+  auth: none
+}
+
+vars:pre-request {
+  uuid: 383f3fe0-a8fa-4bd5-960d-725e979f8313
+}

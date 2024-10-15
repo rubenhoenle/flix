@@ -1,0 +1,22 @@
+meta {
+  name: Update exercise
+  type: http
+  seq: 5
+}
+
+put {
+  url: {{flix-host}}/exercise/{{uuid}}
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "title": "Test1",
+    "uuid": "fa69d76e-fa92-4427-9825-ce778ef71d2f"
+  }
+}
+
+vars:pre-request {
+  uuid: 383f3fe0-a8fa-4bd5-960d-725e979f8313
+}

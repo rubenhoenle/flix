@@ -1,0 +1,17 @@
+meta {
+  name: Create exercise
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{flix-host}}/exercise
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "title": "Test1"
+  }
+}
