@@ -52,6 +52,7 @@ func updateExercise(context *gin.Context) {
 	}
 	var updateExercise exercise
 	if err := context.BindJSON(&updateExercise); err != nil {
+		context.IndentedJSON(http.StatusBadRequest, gin.H{"message": "Invalid body"})
 		return
 	}
 	parsedUuid, err := uuid.Parse(uuidStr)
